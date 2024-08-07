@@ -1,0 +1,85 @@
+---
+const navItems = [
+  { name: 'Products', href: '#products' },
+  { name: 'Solutions', href: '#solutions' },
+  { name: 'Pricing', href: '#pricing' },
+  { name: 'Resources', href: '#resources' },
+];
+---
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="/" class="logo">
+      <img src="/images/logo.png" alt="SMS Platform Logo" />
+    </a>
+    <div class="nav-links">
+      {navItems.map((item) => (
+        <a href={item.href}>{item.name}</a>
+      ))}
+    </div>
+    <div class="nav-buttons">
+      <a href="#login" class="btn btn-secondary">Log In</a>
+      <a href="#demo" class="btn btn-primary">Get a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 15, 26, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo img {
+    height: 2rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: var(--color-primary);
+  }
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 0, 224, 0.3);
+  }
+</style>

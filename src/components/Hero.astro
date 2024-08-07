@@ -1,0 +1,117 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1>
+      Say hello to your #1
+      <span class="gradient-text">revenue channel.</span>
+    </h1>
+    <p>Develop relationships, deliver experiences, drive results with SMS.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary">
+        Start Free Trial
+      </a>
+      <a href="#" class="btn btn-secondary">
+        Book a Demo
+      </a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="/images/app-mockup.png" alt="SMS Platform Demo" class="phone-mockup" />
+    <div class="floating-message left">
+      <span>Hey! Ready to boost your revenue?</span>
+    </div>
+    <div class="floating-message right">
+      <span>Absolutely! Let's get started!</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rem 2rem 4rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-content {
+    max-width: 50%;
+  }
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #b3b3b3;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 0, 224, 0.3);
+  }
+  .hero-image {
+    position: relative;
+  }
+  .phone-mockup {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(74, 0, 224, 0.5));
+    animation: float 6s ease-in-out infinite;
+  }
+  .floating-message {
+    position: absolute;
+    background-color: #ffffff;
+    color: #0f0f1a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .floating-message.left {
+    top: 20%;
+    left: -20%;
+    animation: floatMessage 8s ease-in-out infinite;
+  }
+  .floating-message.right {
+    bottom: 20%;
+    right: -20%;
+    animation: floatMessage 8s ease-in-out infinite 1s;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes floatMessage {
+    0%, 100% { opacity: 0; transform: translateY(20px); }
+    25%, 75% { opacity: 1; transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+</style>
