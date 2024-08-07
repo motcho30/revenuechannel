@@ -17,15 +17,15 @@
 </section>
 
 <script>
-  function animateCounter(counter, target) {
+  function animateCounter(counter: HTMLElement, target: number) {
     let current = 0;
     const increment = target / 100;
     const timer = setInterval(() => {
       current += increment;
-      counter.textContent = Math.floor(current);
+      counter.textContent = Math.floor(current).toString();
       if (current >= target) {
         clearInterval(timer);
-        counter.textContent = target;
+        counter.textContent = target.toString();
       }
     }, 20);
   }
@@ -34,17 +34,20 @@
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.querySelectorAll('.counter').forEach((counter) => {
-          const target = parseInt(counter.getAttribute('data-target'));
-          animateCounter(counter, target);
+          const target = parseInt(counter.getAttribute('data-target') || '0');
+          animateCounter(counter as HTMLElement, target);
         });
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.5 });
 
-  document.querySelector('.stats').querySelectorAll('.stat-card').forEach((card) => {
-    observer.observe(card);
-  });
+  const statsSection = document.querySelector('.stats');
+  if (statsSection) {
+    statsSection.querySelectorAll('.stat-card').forEach((card) => {
+      observer.observe(card);
+    });
+  }
 </script>
 
 <style>
