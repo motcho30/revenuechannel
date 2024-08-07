@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Features from '../components/Features.astro';
+import Expertise from '../components/Expertise.astro';
+import Testimonials from '../components/Testimonial.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="SMS Revenue Platform">
+  <NavBar />
+  <main>
+    <Hero />
+    <Stats />
+    <Features />
+    <Expertise />
+    <Testimonials />
+    <CallToAction />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>
