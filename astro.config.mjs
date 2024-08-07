@@ -3,5 +3,8 @@ import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    functionName: '_render',
+    runtime: 'nodejs18.x'
+  }),
 });
